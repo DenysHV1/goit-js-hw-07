@@ -21,25 +21,17 @@ function createBoxes(amount) {
 	const step = 10;
 	let width = 20;
 	let height = 20;
+	const valueFromInput = Number(amount);
 
 	let allBoxes = '';
-	const num = Number(amount);
-
 	if (amount >= 1 && amount <= 100) {
-		for (let i = num; i > 0; i -= 1) {
-			allBoxes += container.insertAdjacentHTML(
-				'beforeend',
-				'<div class="all-boxes"></div>'
-			);
+		for (let i = valueFromInput; i > 0; i -= 1) {
 			width += step;
 			height += step;
-			container.lastChild.style.width = `${width}px`;
-			container.lastChild.style.height = `${height}px`;
-			container.lastChild.style.backgroundColor = getRandomHexColor();
+			allBoxes += `<div class="all-boxes" style ="width: ${width}px; height: ${height}px; background-color:${getRandomHexColor()};"></div>`;
 		}
 	}
-
-	return allBoxes;
+	container.insertAdjacentHTML('beforeend', allBoxes);
 }
 
 function getRandomHexColor() {
