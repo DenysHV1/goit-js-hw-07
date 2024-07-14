@@ -18,13 +18,13 @@ function destroyBoxes() {
 }
 
 function createBoxes(amount) {
-	const step = 10;
-	let width = 20;
-	let height = 20;
 	const valueFromInput = Number(amount);
 
-	let allBoxes = '';
 	if (amount >= 1 && amount <= 100) {
+		let allBoxes = '';
+		const step = 10;
+		let width = 20;
+		let height = 20;
 		for (let i = valueFromInput; i > 0; i -= 1) {
 			width += step;
 			height += step;
