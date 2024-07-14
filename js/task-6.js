@@ -30,7 +30,7 @@ function createBoxes(amount) {
 			height += step;
 			allBoxes += `<div class="all-boxes" style ="width: ${width}px; height: ${height}px; background-color:${getRandomHexColor()};"></div>`;
 		}
-		container.insertAdjacentHTML('beforeend', allBoxes);
+		return container.insertAdjacentHTML('beforeend', allBoxes);
 	}
 }
 
